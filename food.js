@@ -1,14 +1,14 @@
 const foodNameInput = document.querySelector(".user-input");
 const siginBtn = document.querySelector(".signin-button");
-const info = document.querySelector(".info")
+const info = document.querySelector(".cards")
 siginBtn.addEventListener("click", signIn);
 
-function signIn(event) {
-    console.log("jj")
-    event.preventDefault();
 
-sendRequest() ;
+function signIn(event) {
+  event.preventDefault();
+  sendRequest() ;
 }
+
 
 
 async function sendRequest() {
@@ -27,32 +27,22 @@ async function sendRequest() {
 function useApiData(results) {
 
 results.map (result =>{
-  console.log(result.recipe.label);
-  const li = document.createElement("li");
-  const p = document.createElement("p");
-  const a = document.createElement("a");
+  console.log(results);
   const content = document.getElementById("content");
 // -------------------------------------------------------
   const div = document.createElement("div");
-                div.classList.add("new");
-                const mark = `
-                <h2 >${result.recipe.label}<h2>
-                <h4 >cuisineType: ${result.recipe.cuisineType}<h4>
-                <a href="${result.recipe.url}">Visit!</a>
-                </h2>
-                <div ></div>
-                `;
-                div.innerHTML = mark;
-                info.appendChild(div);
-  
-// ------------------------------------------------------
-  // a.innerHTML = ` ${result.recipe.url}`
-  // p.innerHTML =`cuisineType: ${result.recipe.cuisineType}`;
-  // li.innerHTML =`${result.recipe.label}`;
-  // content.appendChild(a)
-  // content.appendChild(li);
-  // content.appendChild(p);
-  content.appendChild(div);
+       div.classList.add("card");
+      const mark2=`
+      <img  class="card-image" src="${result.recipe.image}" alt="food">
+      <div class="card-content">
+      <h4>${result.recipe.label}</h4>
+      <p>
+      cuisineType: ${result.recipe.cuisineType}
+        </p>
+        <button class="button button5 " style="vertical-align:middle"><span><a href="${result.recipe.url}">Visit!</a> </span></button>
+     </div>`;
+   div.innerHTML = mark2;
+   info.appendChild(div);
 
 })
 }
