@@ -1,4 +1,19 @@
+body { 
+  background-image: url('food1.jpg');
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
 
+.titel H1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
 
 input[type=text] {
   width:80%;
@@ -10,6 +25,7 @@ input[type=text] {
   background-position: 10px 10px; 
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
+  margin: 20px;
 }
 .button {
   border-radius: 4px;
@@ -23,6 +39,7 @@ input[type=text] {
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+  margin: 20px;
 }
 
 .button5 {
